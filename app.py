@@ -17,6 +17,10 @@ dg_client = Deepgram(DEEPGRAM_API_KEY)
 def security():
     return render_template('security.html')
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 
 @app.route('/')
 def index():
