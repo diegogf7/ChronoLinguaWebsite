@@ -1,11 +1,9 @@
-from flask import Flask, request, jsonify, render_template
+import request
 from openai import OpenAI
 from deepgram import Deepgram
 import asyncio
 import re
 
-
-app = Flask(__name__)
 
 # Your OpenAI and Deepgram API keys should be set as environment variables
 # It is not safe to hardcode them in your source code
@@ -160,7 +158,3 @@ def format_word_details_for_gpt(all_word_details):
         for detail in all_word_details
     ]
     return ', '.join(formatted_details)
-
-
-if __name__ == '__main__':
-    app.run(debug=True, port=5000)
